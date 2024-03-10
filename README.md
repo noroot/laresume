@@ -40,8 +40,8 @@ Inside `config.tex` you will find variables you can change
 
 ``` tex
 \def\role{ruby} % Role which case switch different skills from includes/skills.tex
-\def\name{John Dow}
-\def\email{public@email.com}
+\def\name{Dmitry Ro}
+\def\email{public [at] falsetrue.io}
 \def\site{https://github.com/noroot}
 \def\linkedin{https://linkedin.com/in/noroot/}
 \def\telephone{+###-###-##-###}
@@ -52,14 +52,16 @@ Inside `includes/skills.tex` you'll find list of skills and keywords which can b
 
 Inside `default.tex` you'll find main body of resume with professional experiences and other sections. 
 
-### Sign 
+### Sign
+The signature mechanism involves hashing a keyword you enter and inserting it into the document. This enables tracking back to identify who leaked your resume.
+
 * `make sign`
 * Enter signature string for hash generation
+* Every sign logged into signatures.txt which is added into `.gitignore` 
 
 ### All
 * Make everthing together `make all` with default values
 * Open "_build/" there will be generated pdf file with the resume
-
 
 ## Example
 
@@ -73,4 +75,4 @@ Inside `default.tex` you'll find main body of resume with professional experienc
 
 ## License
 * СС-SA-BY
-xs
+
