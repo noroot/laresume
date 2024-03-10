@@ -1,6 +1,6 @@
 # LaResume
 
-Latex framework for building resume.
+LaTex framework for building resume.
 
 ## Features
 
@@ -74,5 +74,6 @@ The signature mechanism involves hashing a keyword you enter and inserting it in
 * [https://catwatchdog.com](https://catwatchdog.com)
 
 ## License
-* СС-SA-BY
+
+* GPLv3
 
