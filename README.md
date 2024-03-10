@@ -64,7 +64,7 @@ Inside `default.tex` you'll find main body of resume with professional experienc
 ## Example
 
 ![./screenshot0.jpeg](./screenshot0.jpeg)
-![./screenshot1.jpeg](./screenshot1.jpeg)
+![./screenshot1.png](./screenshot1.png)
 
 ## Credits
 
