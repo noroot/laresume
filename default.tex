@@ -1,0 +1,232 @@
+\documentclass[9pt]{extarticle}
+\usepackage{extsizes}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-3pt}
+\usepackage[colorlinks=true,urlcolor=blue,linkbordercolor=red,pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\IfFileExists{config.tex}{%
+  \input{config.tex}
+}{%
+\def\role{ruby}
+\def\name{Dmitry Ro}
+\def\email{public@falsetrue.io}
+\def\site{https://falsetrue.io}
+\def\linkedin{https://linkedin.com/in/noroot/}
+\def\telephone{+\#\#\#-\#\#\#-\#\#-\#\#\#}
+\def\roletitle{Lead software development manager, Lead Software developer}
+}
+\titleformat{\section}{\huge\bfseries\color{black}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\huge\bfseries
+      \theauthor}
+    \vspace{.25em}
+
+    \roletitle
+
+    Email: \href{mailto:\email}{\email}
+    ---
+    Tel: \href{tel:\telephone}{\telephone}
+    ---
+    \href{\site?from=cv&h=SIGN}{\site}
+    ---
+    Linkedin: \href{\linkedin}{\linkedin}
+    \vspace{0.25em}
+
+    last updated \today
+
+    \vspace{0.5em}
+    SIGN
+    \vspace{0.5em}
+
+  \end{center}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\newcommand{\datedsection}[2]{%
+  \section[#1]{#1 \hfill #2}%
+}
+\newcommand{\datedsubsection}[2]{%
+  \subsection[#1]{\small\bfseries #1 \hfill\small #2}%
+}
+\newcommand\hr{\par\vspace{-.5\ht\strutbox}\noindent\hrulefill\par}
+
+\begin{document}
+\title{Resume}
+\author{\name}
+\maketitle
+\section{Professional summary}
+\textbf{Lead software development manager} and \textbf{Lead software developer} with over 15 years of experience in the IT industry, my career began as a software developer during the internet's early days in the early 2000s.
+Over the past 5 years, successfully led multiple software development teams comprised of 10 software developers each, while managing the development of over 5 projects. My expertise includes coding, team leadership, system analysis, product management utilizing various methodologies and advanced tools. This blend of technical proficiency and strategic thinking allows me to effectively address challenges and provide solutions. For the past decade, I've been actively involved in FinTech, PropTech, and Blockchain industries.
+
+\input{includes/skills.tex}
+
+\section{Professional experience}
+
+\datedsubsection{``Catwatchdog'', \textbf{Lead Software developer / Software development manager / Fractional CTO}, \textcolor{gray}{Worldwide}}{01/2012---NOW}
+Collaborated with companies and startups within the FinTech sector, contributing to software development, architectural design, and project management utilizing agile methodologies, particularly Scrum.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Architecture and led information system for trading platform with e-documents, integration with government systems, with 1kk users and 100m documents. utilizing more than 10TB documents data per month. }
+  \item{ Successfully integrated Scrum framework, reducing operational and development costs, save company more than 50\% of development budget. }
+  \item{ Cloud infrastructure migration which reduce operational cost by 30\%. }
+  \item{ Solved technical impediments and provide software optimizations which reduce operational costs for 20\%. }
+  \item{ Established SDLC for whole software development organization which speedup release cycle by 50\% from initial values.}
+\end{itemize}
+\textbf{Projects}:
+\begin{itemize}
+  \small
+  \item{\textbf{``Construction development CRM''} // 01/2022---12/2022, Europe, - Software development management for the project, gathering requirements, optimizing infrastructure to reduce costs, team management and provding staff assesment.}
+  \item{\textbf{``E-commerce platform''} // 01/2020---12/2022, Europe, - Software development management for the project, gathering requirements, optimizing infrastructure to reduce costs, team management and provding staff assesment, Scrum integration. }
+  \item{\textbf{``Token market for sportsmanship support''} // 01/2020---12/2021, WW, - Platform for sportsmen and fans who can support their favoirites through tokenization platform}
+        \textbf{Stack}: Ethereum Blockchain, Solidity, Ruby on Rails, HerokuApp
+  \item{\textbf{``Food Ordering Aggregation system''} // 01/2019---12/2019, Contract, US, - Developed a working prototype for a food order aggregation platform focused on consolidating orders from various delivery providers. }
+        \textbf{Stack}: HAPI.JS (Walmart), Mocha, Node Debug, WAF
+  \item{\textbf{``Social network for influencers''} // 01/2017---12/2018, Contract, US, Regulars - mobile app backend server with loopback with social network authorization, payment using Stripe API (http://stripe.com)}
+        \textbf{Stack}: Loopback IO framework (IBM), MongoDB, Angular2, Ionic.
+\end{itemize}
+
+\textbf{Stack}: Ruby, Python, PHP, Javascript (+Node), MongoDB, PostgreSQL, Spark, Airflow, Angular, BPMN, Jira, Confluence, Camunda\\
+\textbf{Ref}: \href{https://catwatchdog.com}{https://catwatchdog.com}
+
+\datedsubsection{``Nitka'', \textbf{Senior Developer}, \textcolor{gray}{New York, US}}{05/2022---10/2023}
+Worked on Renters Insurance platform as Ruby on rails software development, including team leadership, and project management. Setup infrastructure and perform architectural solutions to improve existing code base and integrations with 3rdparty Insurance providers.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Implemented documentation and requirement gathering processes to enhance technical transparency between business and development teams, resulting in reduced clutter and improved collaboration, reducing unnecessary calls by 50\% }
+  \item{ Implemented an automated Software Development Life Cycle (SDLC) encompassing Development, CI/CD, QA, Deployment, and Production stages, resulting in a 20\% acceleration of the release cycle.  }
+  \item{ Developed analytics dashboard tailored for property insurance management increase client observability by 20\% }
+  \item{ Integration with insurance providers APIs to efficiently gather and analyze data for enhanced insights and tracking with up to 1kk insurable objects within more than 10m documents database }
+  \item{ Optimize AWS infrastructure to reduce costs and improve system observability by 20\% }
+\end{itemize}
+\textbf{Stack}: Ruby(Ruby on Rails), Angular, PostgreSQL, Linux, Docker, AWS, Jenkins, NewRelic, Postman, BPMN, Jira, Confluence, Camunda\\
+\textbf{Ref}: \href{https://nitka.com}{https://nitka.com}
+
+
+\datedsubsection{``Social network for automobile industry'', \textbf{Lead Software developer / CTO}, \textcolor{gray}{Europe}}{01/2012---12/2013}
+Orchestrated the development of a cutting-edge automotive marketplace with 50,000+ vehicle listings, while crafting an engaging social media platform tailored to automotive aficionados, boosting user engagement by 40\%\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Contributed to the development and maintenance of a social networking platform from inception, incorporating features such as user profiles, blogs, feeds, and notifications, with more than 50k daily users. }
+  \item{ Setup bare-metal HA/FT linux cluster from scratch which capable to handle 1m daily users. }
+  \item{ Led software development team of 10 software developers. }
+\end{itemize}
+\textbf{Stack}: PHP, MySQL, ZF, Jenkins, HA/FT, Linux based architecture, Team management.
+\textbf{Ref}: N/A
+
+\datedsubsection{``Alloka Analytics'', \textbf{Lead Software developer /  CTO}, \textcolor{gray}{Europe}}{01/2010---12/2012}
+Developed first call tracking system for online and offline advertisement which provides marketing analytics.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Establish requirements gathering process within infrastructure to handle clients and businesses requests reducing clients integration time by 20\%. }
+  \item{ Developed and maintain first call-tracking analytics services on RUnet from scratch. }
+  \item{ Implemented call-center configuration for call tracking using Asterisk PBX, capable to track 100 calls simultaneously. }
+  \item{ Developed call tracking/analytic dashboard with an aggregation of call data, capable to handle 10k daily users.  }
+\end{itemize}
+\textbf{Stack}: Linux, PostgreSQL, Ruby, Ruby on Rails, Asterisk PBX, VoIP
+\textbf{Ref}: \href{https://alloka.com/}{https://alloka.com/}
+
+\datedsubsection{``FinTech company'', \textbf{PHP Software developer}, \textcolor{gray}{Europe}}{01/2010---12/2011}
+Developed automation systems for payment systems, including billing, invoicing, and documentation features.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Participated as a software developer in the development of a payment system platform, integrating with VISA API utilized more than 100k daily transactions }
+  \item{ Managed high-availability and fault-tolerant Linux architectures, along with SQL tuning for optimal performance reducing servers maintenance costs by 25\% }
+  \item{ Developed PostgreSQL secure query authorization protocol which handles over 10k users. }
+  \item{ Provided input for the implementation of PCI DSS compliance procedures to ensure data security and regulatory adherence for more than 10k userbase }
+  \item{ Designed and build a billing platform, invoicing, payment processing, and financial management for businesses with more than 10k userbase}
+  \item{ Maintained Linux systems and performed MySQL server performance optimization reduces costs of operations by 10\% }
+\end{itemize}
+\textbf{Stack}: PHP, MySQL, PostgreSQL, Linux, FreeBSD, Wordpress, WAF
+
+\datedsubsection{``MC.Agency'', \textbf{PHP Software Developer / Linux developer}, \textcolor{gray}{Europe}}{01/2009---12/2010}
+Developed Moodle education platform module to embed it into a mobile Linux system which can be loaded from any computer.
+Developed Wordpress and Drupal platform modules.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Moodle educational platform engine embedded in usb token Linux distribution, which can be loaded from any computer. }
+  \item{ Develop and maintain Wordpress and Drupal sites, which handles over 100k users daily. }
+  \item{ Performed security investigations, security updates, CVE reports for the Wordpress / Drupal  sites which reduced overall uptime by 20\%. }
+\end{itemize}
+\textbf{Stack}: Linux, MySQL, PostgreSQL, PHP, Wordpress, Moodle, Symfony
+\textbf{Ref}: \href{https://mc.agency}{https://mc.agency}
+
+\datedsubsection{``GTM Developments'', \textbf{Lead Software developer}, \textcolor{gray}{Europe}}{01/2009---12/2010}
+Developed and maintained software solutions for travel and ticketing websites targeting both the UK and Australian markets.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{Designed and implemented an integrated flight ticket and tour booking system, incorporating marketing analytics to streamline the process of booking flights and arranging tours with 10k daily users}
+  \item{ Migrated to a new core architecture using ZF framework increasing speed of release cycle by 20\% }
+\end{itemize}
+\textbf{Stack}: Linux, MySQL, PHP, ZF, Symfony, Jenkins
+\textbf{Ref}: N/A
+
+\datedsubsection{``NN.RU'', \textbf{PHP Software developer}, \textcolor{gray}{Europe}}{01/2003---12/2009}
+Developed and support using PHP and Perl, maintained legacy code. (nn.ru, nnov.ru, moskva.com, and nnover.ru)
+Administered Linux servers (LAMP stack) and contributed to development using PHP and Perl, maintained legacy code.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{ Developed and currently maintain a top 10 daily traffic resource within the RUnet. }
+  \item{ Established a bare-metal high-availability and fault-tolerant Linux cluster operating >1m daily users. }
+  \item{ Designed and implemented one of the first web chat applications on a RUnet within top10 rating. }
+  \item{ Created applications for listing companies with more than 10000 companies listings. }
+  \item{ Conducted security investigations and implemented DDoS mitigation strategies increasing site accessibility by 20\% }
+  \item{ Established failover mechanisms using heartbeat, DRBD and MySQL replication to support 99.96\% availability score. }
+\end{itemize}
+
+\textbf{Stack}: Linux, MySQL, PostgreSQL, Perl, PHP, Heartbeat, HAProxy, Nginx, DRBD
+\textbf{Ref}: \href{https://nn.ru}{https://nn.ru}
+
+\section{Education and courses}
+\begin{itemize}
+  \item{Certified Professional Scrum Master}
+  \item{MongoDB Certified}
+  \item{Nizhniy Novgorod Technical Institute}*
+  \item{Moscow Institute of Management and Finance}*
+\end{itemize}
+\section{Public speaking and projects contributions}
+\begin{itemize}
+  \item{Remoters.club - platform for digial nomads and remoter workers \href{https://remoters.club}{https://remoters.club}}
+  \item{Teamsport.io - marketing platform for personal trainers and sporting grounds \href{https://teamsport.io}{https://teamsport.io}}
+  \item{SCBW.GG - Starcraft replay analytics for pro-gamers \href{https://scbw.gg}
+        \textbf{Stack}: Python, Django, PostgreSQL, Go, C++}
+
+  \item{IT52 - Nizhniy Novgorod IT community}. \href{https://it52.info}{https://it52.info}
+  \item{CADR - Hackspace}.
+  \item{NNRUG - Nizniy Novgorod Ruby User Group. }
+  \item{JSNN\#1 - Javascript meetup speaker, ExtJS talk. \href{https://www.it52.info/events/2015-02-28-js-nn-1}{https://www.it52.info/events/2015-02-28-js-nn-1}
+        }
+  \item{JS\#Hackathon - javascript hackathon participant as an expert. \href{https://www.it52.info/events/2015-05-16-mini-hakaton-po-javascript}{https://www.it52.info/events/2015-05-16-mini-hakaton-po-javascript} }
+  \item{ JSNN\#5 Meetup Loopback.io talk \href{https://www.it52.info/events/2017-03-04-js-nn-5}{https://www.it52.info/events/2017-03-04-js-nn-5}}
+  \item{ Yandex Guests invited JavaScript / Angular expert \href{https://events.yandex.ru/events/yagosti/04-03-2017}{https://events.yandex.ru/events/yagosti/04-03-2017}
+  }
+\end{itemize}
+\section{Links}
+\begin{itemize}
+  \item{LinkedIn - \href{https://linkedin.com/in/noroot}{https://linkedin.com/in/noroot}}
+  \item{Github - \href{https://github.com/noroot/}{https://github.com/noroot}}
+  \item{My \href{https://catwatchdog.com/blueprint}{Blueprint} book on Software development management - \href{https://catwatchdog.com/blueprint}{https://catwatchdog.com/blueprint}}
+\end{itemize}
+
+\vspace{0.5em}
+\hr
+2024 \textcopyright\space Dmitry Rodichev. Updated at \today
+
+\vspace{0.5em}
+SIGN
+\vspace{0.5em}
+
+Distribution prohibited. 
+\end{document}
+
+

@@ -1,0 +1,9 @@
+*~
+*.log
+*.aux
+*.out
+.auctex-auto
+_build/*
+signatures.txt
+config.tex
+default.pdf
