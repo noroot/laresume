@@ -1,0 +1,237 @@
+\documentclass[9pt]{extarticle}
+\usepackage{extsizes}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=-3pt}
+\usepackage[colorlinks=true,urlcolor=blue,linkbordercolor=red,pdfborderstyle={/S/U/W 1}]{hyperref}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{etoolbox}
+
+% Initialize custom links list
+\newcommand{\customlinks}{}
+\newcommand{\addlink}[2]{%
+  \listgadd{\customlinks}{{#1}{#2}}%
+}
+
+% Helper command to process each link
+\newcommand{\processlink}[2]{%
+  \item{#1 - \href{#2}{#2}}%
+}
+
+% Load personal configuration from config.tex or use defaults
+\IfFileExists{config.tex}{%
+  \input{config.tex}
+}{%
+\def\role{ruby}
+\def\name{Your Name}
+\def\email{your.email@example.com}
+\def\site{https://yourwebsite.com}
+\def\linkedin{https://linkedin.com/in/yourprofile/}
+\def\github{https://github.com/yourusername}
+\def\telephone{+XXX-XXX-XX-XXX}
+\def\roletitle{Your Professional Title}
+\def\brief{A brief summary of your professional background, highlighting your key expertise and years of experience. Describe your career trajectory, core competencies, and the industries you've worked in. This section should be 2-4 sentences that capture your professional identity and value proposition.}
+\def\showsign{true}
+\def\showdistributionnotice{true}
+% Example: \addlink{My Portfolio}{https://portfolio.example.com}
+% Example: \addlink{My Blog}{https://blog.example.com}
+}
+
+\pdfinfo{
+  /Title (\name)
+  /Author (\name)
+  /Signature (SIGN)
+  /Generator (LaResume)
+}
+
+% Section formatting
+\titleformat{\section}{\huge\bfseries\color{black}}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+
+% Custom title formatting
+\renewcommand{\maketitle}{
+  \begin{center}
+    {\huge\bfseries
+      \theauthor}
+    \vspace{.25em}
+
+    \roletitle
+
+    \ifdefined\email
+      \ifx\email\empty\else
+        Email: \href{mailto:\email}{\email}
+        ---
+      \fi
+    \fi
+    \ifdefined\telephone
+      \ifx\telephone\empty\else
+        Tel: \href{tel:\telephone}{\telephone}
+        ---
+      \fi
+    \fi
+    \ifdefined\site
+      \ifx\site\empty\else
+        \href{\site?from=cv&h=SIGN}{\site}
+        ---
+      \fi
+    \fi
+    \ifdefined\linkedin
+      \ifx\linkedin\empty\else
+        Linkedin: \href{\linkedin}{\linkedin}
+      \fi
+    \fi
+    \vspace{0.25em}
+
+    last updated \today
+
+    \ifdefined\showsign
+      \ifnum\pdfstrcmp{\showsign}{true}=0
+        \vspace{0.5em}
+        SIGN
+        \vspace{0.5em}
+      \fi
+    \fi
+
+  \end{center}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% Custom commands for dated sections
+\newcommand{\datedsection}[2]{%
+  \section[#1]{#1 \hfill #2}%
+}
+\newcommand{\datedsubsection}[2]{%
+  \subsection[#1]{\small\bfseries #1 \hfill\small #2}%
+}
+\newcommand\hr{\par\vspace{-.5\ht\strutbox}\noindent\hrulefill\par}
+
+\begin{document}
+\title{Resume}
+\author{\name}
+\maketitle
+
+% Professional Summary Section
+\section{Professional summary}
+\brief
+
+\section{Skills}
+\subsection{Key skills}
+\keyskills
+\subsection{Technologies}
+\technologies
+
+% Professional Experience Section
+\section{Professional experience}
+
+\datedsubsection{Company Name, \textbf{Your Job Title}, \textcolor{gray}{Location}}{MM/YYYY---MM/YYYY}
+Brief description of your role and responsibilities at this company.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{Describe a key achievement with quantifiable results (e.g., improved performance by X\%, reduced costs by Y\%)}
+  \item{Another significant accomplishment that demonstrates your impact}
+  \item{Third achievement highlighting leadership, technical skills, or business value}
+  \item{Additional achievement if applicable}
+\end{itemize}
+\textbf{Projects}:
+\begin{itemize}
+  \small
+  \item{\textbf{``Project Name''} // MM/YYYY---MM/YYYY, Location - Brief description of the project, your role, and the outcome.
+        \textbf{Stack}: Technology1, Technology2, Framework1, Tool1}
+  \item{\textbf{``Another Project''} // MM/YYYY---MM/YYYY, Location - Description of another project you worked on.
+        \textbf{Stack}: Technology3, Framework2, Tool2}
+\end{itemize}
+\textbf{Stack}: List of technologies, frameworks, and tools you used in this role\\
+\textbf{Ref}: \href{https://company-website.com}{https://company-website.com}
+
+\datedsubsection{Previous Company, \textbf{Previous Job Title}, \textcolor{gray}{Location}}{MM/YYYY---MM/YYYY}
+Description of your role at this company.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{Key achievement with measurable impact}
+  \item{Another significant accomplishment}
+  \item{Technical or leadership contribution}
+\end{itemize}
+\textbf{Stack}: Technologies, Tools, Frameworks used\\
+\textbf{Ref}: \href{https://previous-company.com}{https://previous-company.com}
+
+\datedsubsection{Earlier Company, \textbf{Role Title}, \textcolor{gray}{Location}}{MM/YYYY---MM/YYYY}
+Brief description of this earlier role.\\
+\textbf{Achievements}:
+\begin{itemize}
+  \item{Achievement demonstrating growth and skill development}
+  \item{Another meaningful contribution}
+\end{itemize}
+\textbf{Stack}: Technology stack for this role
+
+% Add more positions as needed following the same pattern
+
+% Education and Certifications
+\section{Education and courses}
+\begin{itemize}
+  \item{Certification Name - Issuing Organization, Year}
+  \item{Another Certification - Organization}
+  \item{University Name, Degree, Field of Study, Year}
+  \item{Additional Education or Training}
+\end{itemize}
+
+% Optional: Public speaking and contributions
+\section{Public speaking and projects contributions}
+\begin{itemize}
+  \item{Open source project or community contribution - \href{https://project-url.com}{https://project-url.com}}
+  \item{Conference talk or presentation - Event Name, Topic. \href{https://event-url.com}{https://event-url.com}}
+  \item{Technical blog or publication}
+  \item{Hackathon participation or organization}
+  \item{Community involvement (meetups, user groups, etc.)}
+\end{itemize}
+
+% Links Section
+\section{Links}
+\begin{itemize}
+  \ifdefined\linkedin
+    \ifx\linkedin\empty\else
+      \item{LinkedIn - \href{\linkedin}{\linkedin}}
+    \fi
+  \fi
+  \ifdefined\github
+    \ifx\github\empty\else
+      \item{GitHub - \href{\github}{\github}}
+    \fi
+  \fi
+  \ifdefined\site
+    \ifx\site\empty\else
+      \item{Personal Website - \href{\site}{\site}}
+    \fi
+  \fi
+  % Output custom links from array
+  \renewcommand*{\do}[1]{%
+    \expandafter\processlink#1%
+  }%
+  \dolistloop{\customlinks}
+\end{itemize}
+
+\vspace{0.5em}
+\hr
+\the\year{} \textcopyright\space \name. Updated at \today
+
+\ifdefined\showsign
+  \ifnum\pdfstrcmp{\showsign}{true}=0
+    \vspace{0.5em}
+    SIGN
+    \vspace{0.5em}
+  \fi
+\fi
+
+\ifdefined\showdistributionnotice
+  \ifnum\pdfstrcmp{\showdistributionnotice}{true}=0
+    Distribution prohibited.
+  \fi
+\fi
+\end{document}
