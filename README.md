@@ -2,23 +2,25 @@
 
 LaTeX framework for building resume.
 
-![](./laresume-logo.png)
+![Laresume logo](./laresume-logo.png)
 
 ## Features
 
 * Configurable
-* Designed resume template optimized for ATS 
+* Designed resume template optimized for ATS
 * Generating pdf file
-* Signing resume file with a hash to track resume leaks 
+* Signing resume file with a hash to track resume leaks
 
-## Setup 
+## Setup
 
 ### Install dependencies
 
 #### Linux
+
 * Install pdflatex `apt-get install pdflatex`
 
 #### Mac
+
 * Install pdflatex with brew `brew cask install mactex`
 
 #### Windows
@@ -27,18 +29,19 @@ I don't know.
 
 ## Usage
 
-### Configuration 
+### Configuration
 
 * Copy configuration template `cp example.config.tex config.tex`
 * Edit configuration and set your info `emacs config.tex`
 
 There are 3 files to edit
+
 * `config.tex` - configuration strings
-* `default-template.tex` - Main CV template file 
+* `default-template.tex` - Main CV template file
 
-Inside `config.tex` you will find variables you can change 
+Inside `config.tex` you will find variables you can change
 
-``` tex 
+``` tex
 \def\role{ruby}
 \def\name{Dmitry Ro}
 \def\email{public@falsetrue.io}
@@ -66,7 +69,7 @@ This section should be 2-4 sentences that capture your professional identity and
 
 ```
 
-Inside `default.tex` you'll find main body of resume with professional experiences and other sections. 
+Inside `default.tex` you'll find main body of resume with professional experiences and other sections.
 
 ### Build
 
@@ -76,14 +79,15 @@ Inside `default.tex` you'll find main body of resume with professional experienc
 
 ### Sign
 
-The signature mechanism involves hashing a keyword you enter and inserting it into the document. 
+The signature mechanism involves hashing a keyword you enter and inserting it into the document.
 This is basic protection which enables tracking back to identify who leaked your resume.
 
 * `make sign`
 * Enter signature string for hash generation
-* Every sign logged into `signatures.txt` which is added into `.gitignore` 
+* Every sign logged into `signatures.txt` which is added into `.gitignore`
 
 ### All
+
 * Make everthing together `make all` with default values
 * Open `_build/` there will be generated pdf file with the resume
 
@@ -100,4 +104,3 @@ This is basic protection which enables tracking back to identify who leaked your
 ## License
 
 * GPLv3
-
